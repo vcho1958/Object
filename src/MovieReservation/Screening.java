@@ -22,18 +22,20 @@ public class Screening {
         return this.sequence == sequence;
     }
 
+    public int getSequence() {
+        return sequence;
+    }
+
     public Money getMovieFee(){
         return movie.getFee();
     }
 
-    public Reservation reserve(Customer customer, int audienceCount){
-        return new Reservation(customer, this, calculateFee(audienceCount), audienceCount);
+    public Movie getMovie() {
+        return movie;
     }
 
-    private Money calculateFee(int audienceCount){
-        return movie.calculateMovieFee(this).times(audienceCount);
+    public LocalDateTime getWhenScreened() {
+        return whenScreened;
     }
-
-
 }
 
